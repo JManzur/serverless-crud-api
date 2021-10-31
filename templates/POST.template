@@ -1,0 +1,6 @@
+{
+   "http_method": "$context.httpMethod",
+   "CustomerId": "$input.params('CustomerId')",
+   "FirstName": "$input.params('FirstName')",
+   "LastName": "$input.params('LastName')"
+}
