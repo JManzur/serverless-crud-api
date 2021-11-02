@@ -52,6 +52,11 @@ terraform apply
 
 ## Debugging / Troubleshooting:
 
+
+<div align="center">
+    <img src="https://1.bp.blogspot.com/-b7YyMHGBZ08/YYFHdXDqH_I/AAAAAAAAFuY/TFO2pYNrCeEkfFVtI8WVDl2LHrpxlz-BwCLcBGAsYHQ/s16000/under_const.jpg"</img> 
+</div>
+
 #### Lambda testing events:
 
 CREATE:
