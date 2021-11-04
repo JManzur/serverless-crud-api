@@ -52,68 +52,21 @@ terraform apply
 
 ## Debugging / Troubleshooting:
 
-<div align="center">
-    <img src="https://1.bp.blogspot.com/-b7YyMHGBZ08/YYFHdXDqH_I/AAAAAAAAFuY/TFO2pYNrCeEkfFVtI8WVDl2LHrpxlz-BwCLcBGAsYHQ/s16000/under_const.jpg"</img> 
-</div>
-
 #### Lambda testing events:
 
-CREATE:
-```json
-{
-  "http_method": "POST",
-  "CustomerId": "1",
-  "FirstName": "Werner",
-  "LastName": "Vogels"
-}
+In the "lambda_test_events" folder you will find all the test events that I use during this project.
+
+There are ideal to test from VS Code can use them from VS Code:
+
+![App Screenshot](./test_from_vs_serverless_crud.png)
+
+But you can also copy the content and use it from the aws-cli:
+
+```bash
+aws lambda invoke --function-name ServerlessCRUD-API --cli-binary-format raw-in-base64-out --payload '{"http_method": "POST", "CustomerId": "1", "FirstName": "Werner", "LastName": "Vogels"}' response.json
 ```
 
-READ:
-```json
-{
-  "http_method": "GET",
-  "CustomerId": "1"
-}
-```
-
-UPDATE_FirstName:
-```json
-{
-  "http_method": "PUT",
-  "CustomerId": "1",
-  "FirstName": "Jeff"
-}
-```
-
-UPDATE_LastName:
-```json
-{
-  "http_method": "PUT",
-  "CustomerId": "1",
-  "LastName": "Bezos"
-}
-```
-
-UPDATE_ERROR:
-```json
-{
-  "http_method": "PUT",
-  "CustomerId": "1"
-}
-```
-
-DELETE_ERROR:
-```json
-{
-  "http_method": "DELETE",
-  "CustomerId": "1"
-}
-```
-
-#### **Known issue #1**: 
- - **Issue**: 
-- **Cause**: 
-- **Solution**: 
+or of course from the AWS console.
 
 ## Author:
 
@@ -121,4 +74,4 @@ DELETE_ERROR:
 
 ## Documentation:
 
-- [EXAMPLE](URL)
+- [Terraform "API Gateway" Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_rest_api)
