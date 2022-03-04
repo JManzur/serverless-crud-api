@@ -432,6 +432,8 @@ output "complete_invoke_url" {
   ]
   description = "API Gateway Invoke URL"
 }
+
+# Use the "-raw" command to view the API key: "terraform output -raw api_key"
 output "api_key" {
   value     = aws_api_gateway_api_key.crud_api_key.value
   sensitive = true

@@ -52,13 +52,57 @@ terraform apply
 
 ## Debugging / Troubleshooting:
 
-#### Lambda testing events:
+### Test the API:
+
+There are several ways to make an API request, so in the following examples I'm only going to cover how to do it using [CURL](https://en.wikipedia.org/wiki/CURL), just because it's the easiest
+
+The curl request is composed of:
+ 1. **Command, parameters and method**
+    - curl -k -X {Method}
+      - curl: Command
+      - -k: Ignore certificate
+      - -X: Execute
+      - Method: POST, GET, PUT or DELETE.
+ 2. **URL + Payload**
+    - Formatting: https://{API Gateway URL}/{Stage}?{Key}={Value}&{Key}={Value}
+    - e.g:
+
+![App Screenshot](images/url_format.png)
+
+ 3. **Header with API Key**
+    - -H 'x-api-key: {API Key}'
+      - -H: Headers
+      - x-api-key: API Key Header for Amazon Api Gateway
+      - API Key: The API Key Value
+        - Note: Execute "terraform output -raw api_key" to get the value.
+
+CREATE:
+```bash
+curl -k -X https://yadayada.execute-api.us-east-1.amazonaws.com/v1/create?CustomerId=01&FirstName=Werner&LastName=Vogels -H 'x-api-key: 1234abcd'
+```
+
+READ:
+```bash
+curl -k -X https://yadayada.execute-api.us-east-1.amazonaws.com/v1/read?CustomerId=01 -H 'x-api-key: 1234abcd'
+```
+
+UPDATE:
+```bash
+curl -k -X https://yadayada.execute-api.us-east-1.amazonaws.com/v1/update?CustomerId=01&LastName=Werners -H 'x-api-key: 1234abcd'
+```
+
+DELETE:
+```bash
+curl -k -X https://yadayada.execute-api.us-east-1.amazonaws.com/v1/delete?CustomerId=01 -H 'x-api-key: 1234abcd'
+```
+
+### Lambda testing events:
 
 In the "lambda_test_events" folder you will find all the test events that I use during this project.
 
 There are ideal to test from VS Code can use them from VS Code:
 
-![App Screenshot](./test_from_vs_serverless_crud.png)
+![App Screenshot](./images/test_from_vs_serverless_crud.pngtest_from_vs_serverless_crud.png)
 
 But you can also copy the content and use it from the aws-cli:
 
@@ -66,11 +110,11 @@ But you can also copy the content and use it from the aws-cli:
 aws lambda invoke --function-name ServerlessCRUD-API --cli-binary-format raw-in-base64-out --payload '{"http_method": "POST", "CustomerId": "1", "FirstName": "Werner", "LastName": "Vogels"}' response.json
 ```
 
-or of course from the AWS console.
+Or of course from the AWS console.
 
 ## Author:
 
-- [@jmanzur](https://github.com/JManzur)
+- [@jmanzur](https://jmanzur.com)
 
 ## Documentation:
 
