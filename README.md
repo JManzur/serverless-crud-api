@@ -78,22 +78,22 @@ The curl request is composed of:
 
 CREATE:
 ```bash
-curl -k -X https://yadayada.execute-api.us-east-1.amazonaws.com/v1/create?CustomerId=01&FirstName=Werner&LastName=Vogels -H 'x-api-key: 1234abcd'
+curl -k -X POST https://yadayada.execute-api.us-east-1.amazonaws.com/v1/create?CustomerId=01&FirstName=Werner&LastName=Vogels -H 'x-api-key: 1234abcd'
 ```
 
 READ:
 ```bash
-curl -k -X https://yadayada.execute-api.us-east-1.amazonaws.com/v1/read?CustomerId=01 -H 'x-api-key: 1234abcd'
+curl -k -X GET https://yadayada.execute-api.us-east-1.amazonaws.com/v1/read?CustomerId=01 -H 'x-api-key: 1234abcd'
 ```
 
 UPDATE:
 ```bash
-curl -k -X https://yadayada.execute-api.us-east-1.amazonaws.com/v1/update?CustomerId=01&LastName=Werners -H 'x-api-key: 1234abcd'
+curl -k -X PUT https://yadayada.execute-api.us-east-1.amazonaws.com/v1/update?CustomerId=01&LastName=Werners -H 'x-api-key: 1234abcd'
 ```
 
 DELETE:
 ```bash
-curl -k -X https://yadayada.execute-api.us-east-1.amazonaws.com/v1/delete?CustomerId=01 -H 'x-api-key: 1234abcd'
+curl -k -X DELETE https://yadayada.execute-api.us-east-1.amazonaws.com/v1/delete?CustomerId=01 -H 'x-api-key: 1234abcd'
 ```
 
 ### Lambda testing events:
