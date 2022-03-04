@@ -23,7 +23,7 @@ This demo is a production-ready serverless deployment, using the following archi
 
 ### Deployment diagram:
 
-![App Screenshot](https://1.bp.blogspot.com/-dBckAkI7Zqk/YX6t-NGdxLI/AAAAAAAAFuM/twv5vWzJTvoEIilQz3IuJxXt3e83tgP2gCLcBGAsYHQ/s16000/serverless-crud-api.drawio.png)
+![App Screenshot](images/serverless-crud-api.png)
 
 ## Tested with: 
 
@@ -102,7 +102,7 @@ In the "lambda_test_events" folder you will find all the test events that I use 
 
 There are ideal to test from VS Code can use them from VS Code:
 
-![App Screenshot](./images/test_from_vs_serverless_crud.pngtest_from_vs_serverless_crud.png)
+![App Screenshot](images/test_from_vs_serverless_crud.png)
 
 But you can also copy the content and use it from the aws-cli:
 
